@@ -15,9 +15,10 @@ class InputTextView extends React.Component {
 
   componentDidMount() {
     if (this.refs && this.refs.input) {
+      const self = this;
       this.refs.input.addEventListener('keydown', function(e) {
         if (String(e.keyCode) === '13' && e.metaKey) {
-          this.form.submit();
+          self.onSubmit();
         }
       });
     }
@@ -25,11 +26,15 @@ class InputTextView extends React.Component {
 
   onChangeText = () => this.setState({ inputText: this.refs.input.value });
 
-  onSubmit = () => {
+  onSubmit = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
     const { onAddMessage } = this.props;
     const { inputText } = this.state;
     if (inputText.length > 0) {
       onAddMessage(inputText);
+      this.setState({ inputText: '' });
     }
   };
 
@@ -41,23 +46,25 @@ class InputTextView extends React.Component {
             Чат
           </span>
           <div className='input-container'>
-            <input
+            <textarea
               ref='input'
-              type='text'
               className='input-field'
               autoFocus={true}
               placeholder='Сообщение'
               onChange={this.onChangeText}
               value={this.state.inputText}
-              onSubmit={this.onSubmit}
+              rows={8}
+              required
             />
           </div>
           <div className='button-container'>
-            <input
-              type='submit'
+            <button
               className='button'
-              value='Отправить'
-            />
+              onClick={this.onSubmit}
+              disabled={this.state.inputText.length === 0}
+            >
+              Отправить
+            </button>
           </div>
         </div>
       </form>
