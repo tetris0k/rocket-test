@@ -5,12 +5,6 @@
     "node": true,
     "jest": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "restParams": true,
-    "spread": true,
-    "experimentalObjectRestSpread": true
-  },
   "extends": "react-app",
   "plugins": [
     "babel",
@@ -61,7 +55,7 @@
       }
     }
     ],
-    "keyword-spacing": ["error", {before: true, after: true}],
+    "keyword-spacing": ["error", {"before": true, "after": true}],
     "space-before-blocks": [2, "always"],
     "space-before-function-paren": [2, "never"],
     "object-curly-spacing": [1, "always"],
@@ -145,7 +139,7 @@
     "react/react-in-jsx-scope": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1,
+    "react/wrap-multilines": 0,
     "babel/generator-star-spacing": 1,
     "babel/new-cap": 0,
     "babel/object-shorthand": 1,

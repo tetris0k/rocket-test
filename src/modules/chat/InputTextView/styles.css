@@ -1,0 +1,64 @@
+.root {
+    width: 62%;
+    height: 322px;
+    background-color: #f4f4f4;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 62px;
+    padding-bottom: 48px;
+}
+
+.button-container {
+    width: 100%;
+    height: 44px;
+    display: block;
+}
+
+.button {
+    float: right;
+    width: 90px;
+    height: 33px;
+    border-radius: 4px;
+    background-color: #52aff1;
+    margin-top: 11px;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.input-container {
+    width: 100%;
+    height: 120px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #dedede;
+    padding: 17px 14px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.input-field {
+    font-family: Roboto sans-serif;
+    border: none;
+    font-size: 14px;
+    opacity: 0.3;
+    text-align: left;
+    width: 100%;
+    color: #000000;
+}
+.input-field:focus {
+    outline: none;
+}
+
+.header {
+    display: block;
+    height: 35px;
+    font-family: Roboto sans-serif;
+    font-size: 30px;
+    text-align: left;
+    color: #333333;
+    margin-bottom: 13px;
+}
