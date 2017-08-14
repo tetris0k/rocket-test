@@ -1,0 +1,53 @@
+.outer-root {
+    background-color: #f4f4f4;
+    width: 62%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 235px;
+    bottom: 0;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.messages-root {
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 30px;
+    right: 30px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 18px;
+}
+
+.scroll-container {
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 9px;
+    right: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    height: 80%;
+    bottom: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    background: #52aff1;
+}

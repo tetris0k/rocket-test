@@ -1,0 +1,40 @@
+.message-container {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 48px;
+    padding-right: 39px;
+}
+
+.white-box {
+    display: flex;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px 0 rgba(100, 100, 100, 0.1);
+    padding: 14px 20px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.3);
+    white-space: pre-wrap;
+    text-align: start;
+}
+
+.avatar {
+    display: flex;
+    border-radius: 50%;
+    border: solid 2px #ffffff;
+}
+.left {
+    margin-right: 14px;
+}
+.right {
+    margin-left: 14px;
+}
+
+.author-name {
+    opacity: 1;
+    font-weight: 600;
+    color: #333333;
+    margin-right: 4px;
+}

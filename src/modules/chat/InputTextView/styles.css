@@ -1,11 +1,12 @@
-.root {
+.input-text-root {
+    position: relative;
     box-sizing: border-box;
     width: 62%;
     background-color: #f4f4f4;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 62px;
-    padding-bottom: 48px;
+    padding-left: 78px;
+    padding-right: 78px;
+    padding-top: 32px;
+    padding-bottom: 24px;
 }
 
 .button-container {
@@ -41,9 +42,10 @@
 }
 
 .input-container {
-    height: 120px;
+    height: 92px;
     border-radius: 4px;
-    padding: 17px 14px;
+    padding: 10px 8px;
+    box-sizing: border-box;
     background-color: #ffffff;
     border: solid 1px #dedede;
     overflow: hidden;
@@ -51,13 +53,12 @@
 
 .input-field {
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.3;
     text-align: left;
     width: 100%;
+    height: 72px;
     box-sizing: border-box;
-    height: 118px;
-    max-height: 118px;
     color: #000000;
     resize: none;
 }
@@ -68,8 +69,8 @@
 .header {
     display: block;
     height: 35px;
-    font-size: 30px;
+    font-size: 24px;
     text-align: left;
     color: #333333;
-    margin-bottom: 13px;
+    margin-bottom: 8px;
 }

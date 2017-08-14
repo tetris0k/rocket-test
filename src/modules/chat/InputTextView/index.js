@@ -41,7 +41,7 @@ class InputTextView extends React.Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <div className='root'>
+        <div className='input-text-root'>
           <span className='header'>
             Чат
           </span>
@@ -53,7 +53,7 @@ class InputTextView extends React.Component {
               placeholder='Сообщение'
               onChange={this.onChangeText}
               value={this.state.inputText}
-              rows={8}
+              rows={6}
               required
             />
           </div>
