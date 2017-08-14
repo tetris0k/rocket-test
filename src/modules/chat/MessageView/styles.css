@@ -9,7 +9,7 @@
 }
 
 .white-box {
-    display: flex;
+    display: inline-block;
     border-radius: 5px;
     background-color: #ffffff;
     box-shadow: 0 4px 6px 0 rgba(100, 100, 100, 0.1);

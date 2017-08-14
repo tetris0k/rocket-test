@@ -45,7 +45,7 @@ export const clientAddMessage = text => ({
 export const clientAutoAnswer = operator_text => ({
   type: CLIENT_ADD_MESSAGE,
   payload: {
-    text: `Эй! Смотри, как я могу лего разворачивать твои сообщения: ${operator_text.split('').reverse().join('')}`,
+    text: `Эй! Смотри, как я могу легко разворачивать твои сообщения: ${operator_text.split('').reverse().join('')}`,
     isClient: true,
     createdAt: new Date()
   }
