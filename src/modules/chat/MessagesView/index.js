@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import MessageView from '../MessageView';
+import { clientAutoSayHello, clientAutoAnswer } from '../ChatState';
 
 import './styles.css';
 
@@ -13,14 +15,23 @@ class MessagesContainer extends React.PureComponent {
   }
 
   componentDidMount() {
+    const self = this;
     if (this.refs && this.refs.messagesRoot) {
-      const self = this;
       this.refs.messagesRoot.addEventListener('scroll', (e) => {
         const shadowTopOpacity = 1 / 20 * Math.min(e.target.scrollTop, 20);
         self.setState({
           shadowTopOpacity
         });
       });
+    }
+    setTimeout(self.props.clientAutoSayHello, 2000);
+  }
+
+  componentDidUpdate() {
+    const { messages } = this.props;
+    if (messages && messages[0] && !messages[0].isClient) {
+      const self = this;
+      setTimeout(() => self.props.clientAutoAnswer(messages[0].text), 1000);
     }
   }
 
@@ -54,5 +65,8 @@ class MessagesContainer extends React.PureComponent {
 export default connect(
   state => ({
     ...state.chat
-  })
+  }),
+  dispatch => bindActionCreators({
+    clientAutoSayHello, clientAutoAnswer
+  }, dispatch)
 )(MessagesContainer);
