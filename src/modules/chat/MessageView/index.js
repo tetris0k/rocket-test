@@ -8,7 +8,7 @@ import './styles.css';
 
 class MessageView extends React.PureComponent {
   render() {
-    const { text, createdAt, isClient, user, client } = this.props;
+    const { text, isClient, user, client } = this.props;
     const name = isClient ? client.name : user.name;
     return (
       <div className='message-container' style={{ justifyContent: isClient ? 'flex-start' : 'flex-end' }}>

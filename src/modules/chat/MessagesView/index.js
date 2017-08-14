@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MessageView from '../MessageView';
 import { clientAutoSayHello, clientAutoAnswer } from '../ChatState';
+import { addDatesToMessagesArray } from '../../../utils/chatUtils';
 
 import './styles.css';
 
@@ -37,6 +38,7 @@ class MessagesContainer extends React.PureComponent {
 
   render() {
     const { messages } = this.props;
+    console.log(addDatesToMessagesArray(messages));
     const { shadowTopOpacity } = this.state;
     const shadowTopStyle = {
       opacity: shadowTopOpacity,
@@ -52,9 +54,11 @@ class MessagesContainer extends React.PureComponent {
         <div style={shadowTopStyle}/>
         <div className='messages-root' ref='messagesRoot'>
           {messages && messages.length > 0 &&
-            messages.map((message, index) => (
-              <MessageView {...message} key={index}/>
-            ))
+          addDatesToMessagesArray(messages).map((message, index) => (
+            message.isDate
+              ? <div key={index} className='date'>{`- ${message.day}.${message.month}.${message.year} -`}</div>
+              : <MessageView {...message} key={index}/>
+          ))
           }
         </div>
       </div>

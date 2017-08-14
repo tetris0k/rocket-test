@@ -6,7 +6,7 @@ const initialState = {
       id: 0,
       text: 'Здравствуйте, я ваша тетя!',
       isClient: true,
-      createdAt: new Date()
+      createdAt: new Date(1, 1, 2017)
     }
   ],
   user: {
