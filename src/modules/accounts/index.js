@@ -5,7 +5,8 @@ import './styles.css';
 const AccountsView = () => (
   <div className='accounts-root'>
     Accounts
-    <Link to='/investments'>To invests</Link>
+    <br/>
+    <Link to='/investments'>To investments</Link>
   </div>
 );
 

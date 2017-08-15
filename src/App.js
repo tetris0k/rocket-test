@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ChatView from './modules/chat';
-import { Route, Redirect, Switch } from 'react-router';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Accounts from './modules/accounts';
 import Invests from './modules/invests';
@@ -12,12 +12,12 @@ class App extends Component {
     return (
       <div className='App'>
         <ChatView/>
-        <Switch location={this.props.location}>
+        <Switch>
           <Route path='/investments' component={Invests} />
           <Route render={() => (
             <div>
               <Accounts />
-              {!(this.props.location && this.props.location.pathname === '/accounts') && <Redirect to='/accounts'/>}
+              {(this.props.location.pathname !== '/accounts') && <Redirect to='/accounts'/>}
             </div>
           )}
           />
@@ -28,5 +28,5 @@ class App extends Component {
 }
 
 export default connect(
-  state => ({ location: state.routing.locationBeforeTransitions })
+  (state, ownProps) => ({ location: ownProps.location })
 )(App);
