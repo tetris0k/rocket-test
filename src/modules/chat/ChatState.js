@@ -20,7 +20,8 @@ const initialState = {
 // Actions
 
 export const ADD_MESSAGE = 'chat/ADD_MESSAGE',
-  CLIENT_ADD_MESSAGE = 'chat/client/ADD_MESSAGE';
+  CLIENT_ADD_MESSAGE = 'chat/client/ADD_MESSAGE',
+  SEND_TRANSACTION = 'chat/transactions/SEND';
 
 // Action creators
 
@@ -38,6 +39,14 @@ export const clientAddMessage = text => ({
   payload: {
     text,
     isClient: true,
+    createdAt: new Date()
+  }
+});
+
+export const sendTransaction = transaction => ({
+  type: SEND_TRANSACTION,
+  payload: {
+    transaction,
     createdAt: new Date()
   }
 });
@@ -64,6 +73,17 @@ export const clientAutoSayHello = () => ({
 
 export default function chat(state = initialState, action) {
   switch (action.type) {
+    case SEND_TRANSACTION:
+      return {
+        ...state,
+        messages: [
+          {
+            isTransaction: true,
+            isClient: false,
+            ...action.payload
+          }
+        ]
+      };
     case ADD_MESSAGE:
       return {
         ...state,
