@@ -16,7 +16,7 @@ class App extends React.PureComponent {
           <Route render={() => (
             <div>
               <Accounts />
-              {(this.props.location.pathname !== '/accounts') && <Redirect to='/accounts'/>}
+              {!this.props.location.pathname.startsWith('/accounts') && <Redirect to='/accounts'/>}
             </div>
           )}
           />

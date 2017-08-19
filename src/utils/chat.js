@@ -19,7 +19,8 @@ export const addDatesToMessagesArray = messages => {
         isDate: true,
         day: currentDay < 10 ? `0${currentDay}` : currentDay,
         month: currentMonth < 9 ? `0${currentMonth + 1}` : currentMonth + 1,
-        year: currentYear
+        year: currentYear,
+        id: -Math.random(100000)
       }, sortedMessages[i]);
     } else {
       arrayWithDates.push(sortedMessages[i]);

@@ -1,7 +1,35 @@
-.invests-root {
+.invests_root {
     position: absolute;
     width: 38%;
     top: 0;
     right: 0;
     bottom: 0;
+    padding-left: 78px;
+    padding-right: 78px;
+    padding-top: 75px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.invests_root .nav_container {
+    display: inline-block;
+    height: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 56px;
+}
+
+.invests_root .nav_container .nav_button {
+    width: 50%;
+    background-color: white;
+    color: #52aff1;
+    border-radius: 4px 0 0 4px;
+    border: solid 1px #52aff1;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.invests_root .nav_container .nav_button:focus {
+    outline: none;
 }

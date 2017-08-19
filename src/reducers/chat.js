@@ -25,40 +25,40 @@ const initialState = {
 
 export default function chat(state = initialState, action) {
   switch (action.type) {
-    case SEND_TRANSACTION:
-      return {
-        ...state,
-        messages: [
-          {
-            isTransaction: true,
-            isClient: false,
-            ...action.payload
-          }
-        ]
-      };
-    case ADD_MESSAGE:
-      return {
-        ...state,
-        messages: [
-          {
-            ...action.payload,
-            id: state.messages.length
-          },
-          ...state.messages
-        ]
-      };
-    case CLIENT_ADD_MESSAGE:
-      return {
-        ...state,
-        messages: [
-          {
-            ...action.payload,
-            id: state.messages.length
-          },
-          ...state.messages
-        ]
-      };
-    default:
-      return state;
+  case SEND_TRANSACTION:
+    return {
+      ...state,
+      messages: [
+        {
+          isTransaction: true,
+          isClient: false,
+          ...action.payload
+        }
+      ]
+    };
+  case ADD_MESSAGE:
+    return {
+      ...state,
+      messages: [
+        {
+          ...action.payload,
+          id: state.messages.length
+        },
+        ...state.messages
+      ]
+    };
+  case CLIENT_ADD_MESSAGE:
+    return {
+      ...state,
+      messages: [
+        {
+          ...action.payload,
+          id: state.messages.length
+        },
+        ...state.messages
+      ]
+    };
+  default:
+    return state;
   }
 }

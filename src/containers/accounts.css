@@ -1,7 +1,44 @@
-.accounts-root {
+.accounts_root {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     width: 38%;
+    padding-left: 78px;
+    padding-right: 78px;
+    padding-top: 75px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.accounts_root .nav_container {
+    display: inline-block;
+    height: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 56px;
+}
+
+.accounts_root .nav_container .nav_button {
+    width: 50%;
+    background-color: #52aff1;
+    color: white;
+    border-radius: 4px 0 0 4px;
+    border: solid 1px #52aff1;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.accounts_root .nav_container .nav_button:focus {
+    outline: none;
+}
+
+.accounts_root .list_container {
+    position: absolute;
+    top: 167px;
+    left: 78px;
+    right: 78px;
+    bottom: 24px;
+    display: block;
 }
