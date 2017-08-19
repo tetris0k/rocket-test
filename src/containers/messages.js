@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import MessageView from '../MessageView';
-import { clientAutoSayHello, clientAutoAnswer } from '../ChatState';
-import { addDatesToMessagesArray } from '../../../utils/chatUtils';
+import MessageView from '../components/message.js';
+import { clientAutoSayHello, clientAutoAnswer, addMessage } from '../actions/chat';
+import { addDatesToMessagesArray } from '../utils/chatUtils';
 
-import './styles.css';
+import './messages.css';
 
 class MessagesContainer extends React.PureComponent {
   constructor(props) {
@@ -36,8 +36,15 @@ class MessagesContainer extends React.PureComponent {
     }
   }
 
+  renderMessage = (message, index, user, client) => {
+    if (message.isDate) {
+      return <div key={index} className='date'>{`- ${message.day}.${message.month}.${message.year} -`}</div>;
+    }
+    return <MessageView {...message} key={index} user={user} client={client} />;
+  };
+
   render() {
-    const { messages } = this.props;
+    const { messages, user, client } = this.props;
     console.log(addDatesToMessagesArray(messages));
     const { shadowTopOpacity } = this.state;
     const shadowTopStyle = {
@@ -54,11 +61,8 @@ class MessagesContainer extends React.PureComponent {
         <div style={shadowTopStyle}/>
         <div className='messages-root' ref='messagesRoot'>
           {messages && messages.length > 0 &&
-          addDatesToMessagesArray(messages).map((message, index) => (
-            message.isDate
-              ? <div key={index} className='date'>{`- ${message.day}.${message.month}.${message.year} -`}</div>
-              : <MessageView {...message} key={index}/>
-          ))
+          addDatesToMessagesArray(messages).map((message, index) =>
+            this.renderMessage(message, index, user, client))
           }
         </div>
       </div>
@@ -71,6 +75,6 @@ export default connect(
     ...state.chat
   }),
   dispatch => bindActionCreators({
-    clientAutoSayHello, clientAutoAnswer
+    clientAutoSayHello, clientAutoAnswer, addMessage
   }, dispatch)
 )(MessagesContainer);

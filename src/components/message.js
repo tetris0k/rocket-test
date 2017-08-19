@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import userAvatar from '../../../user.jpg';
-import clientAvatar from '../../../client.jpg';
+import userAvatar from '../user.jpg';
+import clientAvatar from '../client.jpg';
 
-import './styles.css';
+import './message.css';
 
-class MessageView extends React.PureComponent {
+export default class MessageView extends React.PureComponent {
+  static propTypes = {
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    createdAt: PropTypes.any.isRequired,
+    isClient: PropTypes.bool.isRequired,
+    user: PropTypes.object.isRequired,
+    client: PropTypes.object.isRequired
+  };
+
   render() {
     const { text, isClient, user, client } = this.props;
     const name = isClient ? client.name : user.name;
@@ -26,17 +34,3 @@ class MessageView extends React.PureComponent {
     );
   }
 }
-
-MessageView.propTypes = {
-  id: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
-  createdAt: PropTypes.any.isRequired,
-  isClient: PropTypes.bool.isRequired
-};
-
-export default connect(
-  state => ({
-    user: state.chat.user,
-    client: state.chat.client
-  })
-)(MessageView);

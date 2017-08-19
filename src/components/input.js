@@ -1,11 +1,12 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { addMessage } from '../ChatState';
+import PropTypes from 'prop-types';
 
-import './styles.css';
+import './input.css';
 
-class InputTextView extends React.Component {
+export default class InputTextView extends React.Component {
+  static propTypes = {
+    onAddMessage: PropTypes.func.isRequired
+  };
   constructor() {
     super();
     this.state = {
@@ -71,10 +72,3 @@ class InputTextView extends React.Component {
     );
   }
 }
-
-export default connect(
-  () => ({}),
-  dispatch => bindActionCreators({
-    onAddMessage: addMessage
-  }, dispatch)
-)(InputTextView);

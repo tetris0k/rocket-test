@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import ChatView from './modules/chat';
+import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Accounts from './modules/accounts';
-import Invests from './modules/invests';
-//import logo from './logo.svg';
+import ChatView from './containers/chat';
+import Accounts from './containers/accounts';
+import Invests from './containers/invests';
 import './App.css';
 
-class App extends Component {
+class App extends React.PureComponent {
   render() {
     return (
       <div className='App'>

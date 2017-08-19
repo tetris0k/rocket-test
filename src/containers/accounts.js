@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
+import './accounts.css';
 
 const AccountsView = () => (
   <div className='accounts-root'>
