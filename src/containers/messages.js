@@ -57,7 +57,7 @@ class MessagesContainer extends React.PureComponent {
       <div className='outer-root'>
         <div style={shadowTopStyle}/>
         <div className='messages-root' ref='messagesRoot'>
-          {messages && messages.length > 0 &&
+          {messages &&
           addDatesToMessagesArray(messages).map(message =>
             this.renderMessage(message, message.id, user, client))
           }

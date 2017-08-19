@@ -3,13 +3,14 @@
 const initialState = {
   accounts: [
     {
-      id: 57890456,
+      id: '57890456',
       sum: 69650,
       currency: 'RUR',
       percent: 8,
       createdAt: new Date(2017, 0, 23, 13, 55),
       transfers: [
         {
+          id: 0,
           isPercents: false,
           cardLastChars: '0465',
           createdAt: new Date(2017, 2, 8, 19, 21),
@@ -17,6 +18,7 @@ const initialState = {
           increase: true
         },
         {
+          id: 1,
           isPercents: false,
           cardLastChars: '0465',
           createdAt: new Date(2017, 2, 7, 13, 55),
@@ -24,6 +26,7 @@ const initialState = {
           increase: true
         },
         {
+          id: 2,
           isPercents: false,
           cardLastChars: '0465',
           createdAt: new Date(2017, 2, 5, 19, 16),
@@ -31,6 +34,7 @@ const initialState = {
           increase: false
         },
         {
+          id: 3,
           isPercents: false,
           cardLastChars: '0465',
           createdAt: new Date(2017, 2, 1, 10, 25),
@@ -38,6 +42,7 @@ const initialState = {
           increase: true
         },
         {
+          id: 4,
           isPercents: true,
           cardLastChars: '',
           createdAt: new Date(2017, 1, 20, 18, 10),
@@ -45,6 +50,7 @@ const initialState = {
           increase: true
         },
         {
+          id: 5,
           isPercents: false,
           cardLastChars: '0472',
           createdAt: new Date(2017, 1, 20, 18, 9),
@@ -52,6 +58,7 @@ const initialState = {
           increase: true
         },
         {
+          id: 6,
           isPercents: false,
           cardLastChars: '0465',
           createdAt: new Date(2017, 1, 13, 23, 18),
@@ -61,13 +68,14 @@ const initialState = {
       ]
     },
     {
-      id: 57890398,
+      id: '57890398',
       sum: 3502,
       currency: 'USD',
       percent: 4.5,
       createdAt: new Date(2016, 7, 14, 10, 12),
       transfers: [
         {
+          id: 0,
           cardLastChars: '0019',
           createdAt: new Date(2016, 9, 27, 21, 13),
           sum: 96,
@@ -76,13 +84,14 @@ const initialState = {
       ]
     },
     {
-      id: 57890239,
+      id: '57890239',
       sum: 10500,
       currency: 'RUR',
       percent: 8,
       createdAt: new Date(2017, 2, 1, 20, 3),
       transfers: [
         {
+          id: 0,
           cardLastChars: '3791',
           createdAt: new Date(2017, 2, 5, 17, 15),
           sum: 500,

@@ -1,0 +1,62 @@
+.account {
+    position: relative;
+    display: block;
+    text-align: start;
+    box-sizing: content-box;
+    padding: 30px;
+}
+
+.account .id {
+    font-size: 16px;
+    color: #333333;
+    line-height: 1;
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.account .sum {
+    font-size: 20px;
+    line-height: 0.8;
+    height: 16px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.account .percent {
+    font-size: 12px;
+    line-height: 1.33;
+    color: #999999;
+    height: 16px;
+}
+
+.account .date_string {
+    text-align: start;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #999999;
+    height: 16px;
+}
+
+.account .transaction {
+    font-size: 12px;
+    line-height: 1.33;
+    color: #999999;
+    height: 16px;
+}
+
+.account .link_right {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    color: #979797;
+    text-decoration: none;
+}
+
+.account .icon_right {
+    padding: 0;
+    height: 16px;
+    width: 16px;
+}

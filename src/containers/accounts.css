@@ -4,8 +4,8 @@
     right: 0;
     bottom: 0;
     width: 38%;
-    padding-left: 78px;
-    padding-right: 78px;
+    padding-left: 48px;
+    padding-right: 48px;
     padding-top: 75px;
     padding-bottom: 24px;
     box-sizing: border-box;
@@ -17,9 +17,12 @@
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 56px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .accounts_root .nav_container .nav_button {
+    box-sizing: border-box;
     width: 50%;
     background-color: #52aff1;
     color: white;
@@ -37,8 +40,9 @@
 .accounts_root .list_container {
     position: absolute;
     top: 167px;
-    left: 78px;
-    right: 78px;
+    left: 48px;
+    right: 48px;
     bottom: 24px;
     display: block;
+    overflow-y: scroll;
 }
