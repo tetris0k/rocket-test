@@ -2,7 +2,7 @@ export const addDatesToMessagesArray = messages => {
   if (messages.length === 0) {
     return [];
   }
-  const sortedMessages = messages.sort((a, b) => a.createdAt <= b.createdAt);
+  const sortedMessages = messages;
   let currentDate = null;
   let isNewDate = true;
   let currentYear = null;
