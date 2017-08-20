@@ -29,7 +29,7 @@ class MessagesContainer extends React.PureComponent {
     const { messages } = nextProps;
     if (messages && messages[0] && !messages[0].isClient && !messages[0].isTransaction && !nextState.isTiming) {
       this.setState({ isTiming: true });
-      console.log('set timeout from componentWillUpdate');
+      // console.log('set timeout from componentWillUpdate');
       setTimeout(() => {
         this.props.clientAutoAnswer(messages[0].text);
         this.setState({ isTiming: false });
