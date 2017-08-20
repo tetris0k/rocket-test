@@ -76,6 +76,7 @@ const initialState = {
       transfers: [
         {
           id: 0,
+          isPercents: false,
           cardLastChars: '0019',
           createdAt: new Date(2016, 9, 27, 21, 13),
           sum: 96,
@@ -92,6 +93,7 @@ const initialState = {
       transfers: [
         {
           id: 0,
+          isPercents: false,
           cardLastChars: '3791',
           createdAt: new Date(2017, 2, 5, 17, 15),
           sum: 500,

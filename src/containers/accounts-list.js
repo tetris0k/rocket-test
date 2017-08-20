@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Account from '../components/account';
+import './accounts-list.css';
 
 class AccountsList extends React.PureComponent {
   static propTypes = {
@@ -9,7 +10,7 @@ class AccountsList extends React.PureComponent {
   };
   render() {
     return (
-      <div>
+      <div className='accounts_list'>
         {this.props.accounts.map((account, index) =>
           <Account
             key={account.id}

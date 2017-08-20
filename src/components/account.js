@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getCurrencySign, getDateString, addBlanksToSum } from '../utils/accounts';
+import MaximizeIcon from '../maximize.icon';
+import CloseIcon from '../close.icon';
 
 import './account.css';
 
@@ -46,7 +48,12 @@ export default class Account extends React.PureComponent {
             </span>)
           </div>
         }
-        <Link to={linkTo || `/accounts/${id}`} className='link_right'><i className={`fa fa-${opened ? 'times' : 'expand'} account icon_right`} /></Link>
+        <Link to={linkTo || `/accounts/${id}`} className='link_right'>
+          {opened
+            ? <CloseIcon className='icon_right'/>
+            : <MaximizeIcon className='icon_right'/>
+          }
+        </Link>
       </div>
     );
   }

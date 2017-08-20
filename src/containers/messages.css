@@ -52,11 +52,17 @@
     background: #52aff1;
 }
 
-.date {
+.outer-root .date {
     margin-top: 12px;
     margin-bottom: 12px;
     font-size: 14px;
     text-align: center;
     color: #b7b7b7;
     font-weight: 300;
+}
+
+.outer-root .transaction_title_string {
+    display: block;
+    font-size: 14px;
+    color: #262626;
 }

@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import MessageView from '../components/message.js';
 import { clientAutoSayHello, clientAutoAnswer, addMessage } from '../actions/chat';
 import { addDatesToMessagesArray } from '../utils/chat';
+import Transaction from '../components/transaction';
 
 import './messages.css';
 
@@ -11,7 +12,8 @@ class MessagesContainer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      shadowTopOpacity: 0
+      shadowTopOpacity: 0,
+      isTiming: false,
     };
   }
 
@@ -27,17 +29,31 @@ class MessagesContainer extends React.PureComponent {
     setTimeout(this.props.clientAutoSayHello, 2000);
   }
 
-  componentDidUpdate() {
-    const { messages } = this.props;
-    if (messages && messages[0] && !messages[0].isClient) {
-      setTimeout(() => this.props.clientAutoAnswer(messages[0].text), 1000);
+  componentWillUpdate(nextProps, nextState) {
+    const { messages } = nextProps;
+    if (messages && messages[0] && !messages[0].isClient && !messages[0].isTransaction && !nextState.isTiming) {
+      this.setState({ isTiming: true });
+      setTimeout(() => {
+        this.props.clientAutoAnswer(messages[0].text);
+        this.setState({ isTiming: false });
+      }, 1000);
     }
   }
 
   renderMessage = (message, key, user, client) => {
     if (message.isDate) {
       return <div key={String(key)} className='date'>{`- ${message.day}.${message.month}.${message.year} -`}</div>;
+    } else if (message.isTransaction) {
+      return <MessageView
+        key={String(key)}
+        user={user}
+        client={client}
+        {...message}
+        doNotShowAuthor
+        text={[<span key={0} className='transaction_title_string'>Операция</span>, <Transaction {...message.transaction} key={1}/>]}
+      />;
     }
+
     return <MessageView {...message} key={String(key)} user={user} client={client} />;
   };
 

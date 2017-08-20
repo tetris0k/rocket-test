@@ -38,10 +38,13 @@
 }
 
 .account .transaction {
+    text-align: start;
     font-size: 12px;
     line-height: 1.33;
     color: #999999;
     height: 16px;
+    white-space: nowrap;
+    padding: 0;
 }
 
 .account .link_right {
@@ -59,4 +62,5 @@
     padding: 0;
     height: 16px;
     width: 16px;
+    object-fit: contain;
 }

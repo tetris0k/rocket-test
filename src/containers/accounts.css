@@ -40,9 +40,9 @@
 .accounts_root .list_container {
     position: absolute;
     top: 167px;
-    left: 48px;
-    right: 48px;
+    left: 30px;
+    right: 30px;
     bottom: 24px;
     display: block;
-    overflow-y: scroll;
+    overflow-y: auto;
 }

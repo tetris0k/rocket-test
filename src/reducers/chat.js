@@ -30,10 +30,12 @@ export default function chat(state = initialState, action) {
       ...state,
       messages: [
         {
+          id: state.messages.length,
           isTransaction: true,
           isClient: false,
           ...action.payload
-        }
+        },
+        ...state.messages
       ]
     };
   case ADD_MESSAGE:
@@ -50,13 +52,15 @@ export default function chat(state = initialState, action) {
   case CLIENT_ADD_MESSAGE:
     return {
       ...state,
-      messages: [
-        {
-          ...action.payload,
-          id: state.messages.length
-        },
-        ...state.messages
-      ]
+      messages: ((state.messages[0].isClient && state.messages.length > 1) || state.messages[0].isTransaction)
+        ? state.messages
+        : [
+          {
+            ...action.payload,
+            id: state.messages.length
+          },
+          ...state.messages
+        ]
     };
   default:
     return state;

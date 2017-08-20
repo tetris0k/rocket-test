@@ -1,0 +1,41 @@
+.transaction {
+    display: block;
+    position: relative;
+    text-align: start;
+    height: 52px;
+    padding: 10px 30px 10px 30px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+}
+
+.transaction .date_string {
+    font-size: 12px;
+    line-height: 1.33;
+    color: #999999;
+    height: 16px;
+    padding: 0;
+}
+
+.transaction .body_string {
+    font-size: 12px;
+    line-height: 1.33;
+    height: 16px;
+    color: #262626;
+    padding: 0;
+}
+
+.transaction .share_button {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 16px;
+    height: 16px;
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.transaction .share_button:focus {
+    outline: none;
+}
