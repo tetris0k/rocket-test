@@ -1,4 +1,4 @@
-.invests_root {
+.deposits_root {
     z-index: 3;
     position: absolute;
     width: 38%;
@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-.invests_root .nav_container {
+.deposits_root .nav_container {
     display: inline-block;
     height: 36px;
     width: 100%;
@@ -20,7 +20,7 @@
     margin-bottom: 56px;
 }
 
-.invests_root .nav_container .nav_button {
+.deposits_root .nav_container .nav_button {
     width: 50%;
     background-color: white;
     color: #52aff1;
@@ -31,6 +31,16 @@
     font-weight: 200;
 }
 
-.invests_root .nav_container .nav_button:focus {
+.deposits_root .nav_container .nav_button:focus {
     outline: none;
+}
+
+.deposits_root .list_container {
+    position: absolute;
+    top: 167px;
+    left: 30px;
+    right: 30px;
+    bottom: 24px;
+    display: block;
+    overflow-y: auto;
 }

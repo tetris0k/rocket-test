@@ -12,7 +12,7 @@ const AccountsView = () => (
       <button className='nav_button'>
         Счета
       </button>
-      <Link to='/investments'>
+      <Link to='/deposits'>
         <button className='nav_button' style={{ borderRadius: '0 4px 4px 0', backgroundColor: 'white', color: '#52aff1' }}>
           Вклады
         </button>

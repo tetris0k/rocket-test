@@ -3,7 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ChatView from './containers/chat';
 import Accounts from './containers/accounts';
-import Invests from './containers/invests';
+import Deposits from './containers/deposits';
 import './App.css';
 
 class App extends React.PureComponent {
@@ -12,7 +12,7 @@ class App extends React.PureComponent {
       <div className='App'>
         <ChatView/>
         <Switch>
-          <Route path='/investments' component={Invests} />
+          <Route path='/deposits' component={Deposits} />
           <Route render={() => (
             <div>
               <Accounts />

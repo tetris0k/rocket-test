@@ -4,12 +4,14 @@ export const getCurrencySign = currency => {
     return '₽';
   case 'USD':
     return '$';
+  case 'EUR':
+    return '€';
   default:
     return '';
   }
 };
 
-export const getDateString = date => {
+export const getDateString = (date, doNotShowTime) => {
   let day = date.getUTCDate();
   if (day < 10) {day = `0${day}`;}
   let month = date.getUTCMonth() + 1;
@@ -19,6 +21,9 @@ export const getDateString = date => {
   if (hours < 10) {hours = `0${hours}`;}
   let minutes = date.getUTCMinutes();
   if (minutes < 10) {minutes = `0${minutes}`;}
+  if (doNotShowTime) {
+    return `${day}.${month}.${year}`;
+  }
   return `${day}.${month}.${year} | ${hours}:${minutes}`;
 };
 

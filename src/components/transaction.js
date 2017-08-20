@@ -15,16 +15,28 @@ export default class Transaction extends React.PureComponent {
     increase: PropTypes.bool.isRequired,
     currency: PropTypes.string.isRequired,
     isDark: PropTypes.bool,
-    onPress: PropTypes.func
+    onPress: PropTypes.func,
+    isInitialDeposit: PropTypes.bool
+  };
+
+  onClick = () => {
+    const { isDark, onPress, ...rest } = this.props;
+    if (onPress) {
+      onPress(rest);
+    }
   };
 
   render() {
-    const { isPercents, cardLastChars, createdAt, sum, increase, currency, isDark, onPress } = this.props;
+    const { isPercents, cardLastChars, createdAt, sum, increase, currency, isDark, onPress, isInitialDeposit } = this.props;
     let secondLine = '';
     const sumSpan = <span style={{ color: increase ? '#6ece1a' : '#de1c28' }}>
       {increase ? '+' : '-'} {addBlanksToSum(sum)} {getCurrencySign(currency)}
     </span>;
-    if (isPercents) {
+    if (isInitialDeposit) {
+      secondLine = <div className='body_string'>
+        Изначальный вклад {sumSpan}
+      </div>;
+    } else if (isPercents) {
       secondLine = <div className='body_string'>
         Начисление процентов {sumSpan}
       </div>;
@@ -57,10 +69,5 @@ export default class Transaction extends React.PureComponent {
         }
       </div>
     );
-  }
-
-  onClick = () => {
-    const { isDark, onPress, ...rest } = this.props;
-    onPress(rest);
   }
 }
