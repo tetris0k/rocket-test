@@ -12,18 +12,14 @@ class MessagesContainer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      shadowTopOpacity: 0,
-      isTiming: false,
+      isTiming: false
     };
   }
 
   componentDidMount() {
     if (this.refs && this.refs.messagesRoot) {
       this.refs.messagesRoot.addEventListener('scroll', (e) => {
-        const shadowTopOpacity = 1 / 20 * Math.min(e.target.scrollTop, 20);
-        this.setState({
-          shadowTopOpacity
-        });
+        this.props.setShadow(Math.min(e.target.scrollTop, 10));
       });
     }
     setTimeout(this.props.clientAutoSayHello, 2000);
@@ -33,6 +29,7 @@ class MessagesContainer extends React.PureComponent {
     const { messages } = nextProps;
     if (messages && messages[0] && !messages[0].isClient && !messages[0].isTransaction && !nextState.isTiming) {
       this.setState({ isTiming: true });
+      console.log('set timeout from componentWillUpdate');
       setTimeout(() => {
         this.props.clientAutoAnswer(messages[0].text);
         this.setState({ isTiming: false });
@@ -59,19 +56,8 @@ class MessagesContainer extends React.PureComponent {
 
   render() {
     const { messages, user, client } = this.props;
-    const { shadowTopOpacity } = this.state;
-    const shadowTopStyle = {
-      opacity: shadowTopOpacity,
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      height: 10,
-      background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%)'
-    };
     return (
       <div className='outer-root'>
-        <div style={shadowTopStyle}/>
         <div className='messages-root' ref='messagesRoot'>
           {messages &&
           addDatesToMessagesArray(messages).map(message =>

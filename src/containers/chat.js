@@ -7,12 +7,27 @@ import MessagesContainerView from './messages.js';
 
 import './chat.css';
 
-const ChatView = ({ addMessage }) => (
-  <div className='chat-root'>
-    <InputTextView onAddMessage={addMessage}/>
-    <MessagesContainerView/>
-  </div>
-);
+class ChatView extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shadowHeight: 0
+    };
+  }
+
+  setShadow = (shadow) => {
+    this.setState({ shadowHeight: shadow });
+  };
+
+  render() {
+    return (
+      <div className='chat-root'>
+        <InputTextView onAddMessage={this.props.addMessage} shadowHeight={this.state.shadowHeight}/>
+        <MessagesContainerView setShadow={this.setShadow}/>
+      </div>
+    );
+  }
+}
 
 export default connect(
   () => ({}),

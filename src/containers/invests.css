@@ -1,4 +1,5 @@
 .invests_root {
+    z-index: 3;
     position: absolute;
     width: 38%;
     top: 0;
