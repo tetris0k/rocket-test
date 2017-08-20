@@ -47,9 +47,9 @@ export default class InputTextView extends React.Component {
           className='input-text-root'
           style={{
             zIndex: 2,
-            'WebkitBoxShadow': `0 ${shadowHeight}px ${shadowHeight}px -6px #888888`,
-            'MozBoxShadow': `0 ${shadowHeight}px ${shadowHeight}px -6px #888888`,
-            'boxShadow': `0 ${shadowHeight}px ${shadowHeight}px -6px #888888`
+            'WebkitBoxShadow': `0 ${shadowHeight}px ${shadowHeight}px -10px #888888`,
+            'MozBoxShadow': `0 ${shadowHeight}px ${shadowHeight}px -10px #888888`,
+            'boxShadow': `0 ${shadowHeight}px ${shadowHeight}px -10px #888888`
           }}
         >
           <span className='header'>
