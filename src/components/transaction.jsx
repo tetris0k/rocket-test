@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getDateString, getCurrencySign, addBlanksToSum } from '../utils/accounts';
-import ShareIcon from '../mingle-share.icon';
+
+import mingleShare from '../mingle-share.svg';
 
 import './transaction.css';
 
@@ -65,7 +66,9 @@ export default class Transaction extends React.PureComponent {
         <div className='date_string'>{getDateString(createdAt)}</div>
         {secondLine}
         {onPress &&
-        <button onClick={this.onClick} className='share_button'><ShareIcon/></button>
+        <button onClick={this.onClick} className='share_button'>
+          <img src={mingleShare} alt='share' />
+        </button>
         }
       </div>
     );

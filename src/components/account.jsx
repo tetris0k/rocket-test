@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getCurrencySign, getDateString, addBlanksToSum } from '../utils/accounts';
-import MaximizeIcon from '../maximize.icon';
-import CloseIcon from '../close.icon';
+
+import maximize from '../maximize.svg';
+import close from '../close.svg';
 
 import './right-side-item.css';
 
@@ -50,8 +51,8 @@ export default class Account extends React.PureComponent {
         }
         <Link to={linkTo || `/accounts/${id}`} className='link_right'>
           {opened
-            ? <CloseIcon className='icon_right'/>
-            : <MaximizeIcon className='icon_right'/>
+            ? <img src={close} className='icon_right' alt='close' />
+            : <img src={maximize} className='icon_right' alt='maximize' />
           }
         </Link>
       </div>
