@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import MessageView from '../components/message.js';
+import MessageView from '../components/message.jsx';
 import { clientAutoSayHello, clientAutoAnswer, addMessage } from '../actions/chat';
 import { addDatesToMessagesArray } from '../utils/chat';
 import Transaction from '../components/transaction';

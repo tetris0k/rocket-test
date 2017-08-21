@@ -5,16 +5,15 @@ import Deposit from '../components/deposit';
 import Transaction from '../components/transaction';
 import { sendTransaction } from '../actions/chat';
 
-import './account.css';
-import './accounts.css';
+import './deposit.css';
 
 class DepositView extends React.PureComponent {
   render() {
     const id = this.props.match.params.id;
     const deposit = this.props.deposits.find(acc => String(acc.id) === id);
     return (
-      <div className='account_container' >
-        <div className='account_view'>
+      <div className='deposit_container' >
+        <div className='deposit_view'>
           <Deposit {...deposit} opened/>
         </div>
         <span className='history_string'>История операций</span>

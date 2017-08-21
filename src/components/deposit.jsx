@@ -5,7 +5,7 @@ import { getCurrencySign, getDateString, addBlanksToSum } from '../utils/account
 import MaximizeIcon from '../maximize.icon';
 import CloseIcon from '../close.icon';
 
-import './account.css';
+import './deposit.css';
 
 export default class Deposit extends React.PureComponent {
   static propTypes = {
@@ -29,7 +29,7 @@ export default class Deposit extends React.PureComponent {
     const profit = sum - transfers[transfers.length - 1].sum;
     return (
       <div
-        className='account'
+        className='deposit'
         style={isDark
           ? { backgroundColor: '#f9f9f9', borderTop: '1px solid #eeeeee', borderBottom: '1px solid #eeeeee' }
           : {}

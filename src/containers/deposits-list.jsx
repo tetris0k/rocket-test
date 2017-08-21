@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Deposit from '../components/deposit';
 
-import './accounts-list.css';
+import './deposits-list.css';
 
 class DepositsList extends React.PureComponent {
   static propTypes = {
@@ -11,7 +11,7 @@ class DepositsList extends React.PureComponent {
   };
   render() {
     return (
-      <div className='accounts_list'>
+      <div className='deposits_list'>
         {this.props.deposits.map((item, index) =>
           <Deposit
             key={item.id}

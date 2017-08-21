@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addMessage } from '../actions/chat';
-import InputTextView from '../components/input.js';
-import MessagesContainerView from './messages.js';
+import InputTextView from '../components/input.jsx';
+import MessagesContainerView from './messages.jsx';
 
 import './chat.css';
 
