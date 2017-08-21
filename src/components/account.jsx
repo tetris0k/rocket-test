@@ -5,7 +5,7 @@ import { getCurrencySign, getDateString, addBlanksToSum } from '../utils/account
 import MaximizeIcon from '../maximize.icon';
 import CloseIcon from '../close.icon';
 
-import './account.css';
+import './right-side-item.css';
 
 export default class Account extends React.PureComponent {
   static propTypes = {
@@ -31,7 +31,7 @@ export default class Account extends React.PureComponent {
     const curSign = getCurrencySign(currency);
     return (
       <div
-        className='account'
+        className='right_side_item'
         style={isDark
           ? { backgroundColor: '#f9f9f9', borderTop: '1px solid #eeeeee', borderBottom: '1px solid #eeeeee' }
           : {}

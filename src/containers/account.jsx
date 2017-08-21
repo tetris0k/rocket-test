@@ -5,16 +5,15 @@ import Account from '../components/account';
 import Transaction from '../components/transaction';
 import { sendTransaction } from '../actions/chat';
 
-import './account.css';
-import './accounts.css';
+import './right-side-item-page.css';
 
 class AccountView extends React.PureComponent {
   render() {
     const id = this.props.match.params.id;
     const account = this.props.accounts.find(acc => acc.id === id);
     return (
-      <div className='account_container' >
-        <div className='account_view'>
+      <div className='right_side_item_page' >
+        <div className='item_view'>
           <Account {...account} linkTo='/accounts' opened/>
         </div>
         <span className='history_string'>История операций</span>

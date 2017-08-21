@@ -4,13 +4,13 @@ import { Route, Switch } from 'react-router-dom';
 import DepositsList from './deposits-list';
 import DepositView from './deposit';
 
-import './deposits.css';
+import './right-side-items-page.css';
 
 const DepositsView = () => (
-  <div className='deposits_root'>
+  <div className='right_side_items_page'>
     <div className='nav_container'>
       <Link to='/accounts'>
-        <button className='nav_button'>
+        <button className='nav_button' style={{ backgroundColor: 'white', color: '#52aff1' }}>
           Счета
         </button>
       </Link>

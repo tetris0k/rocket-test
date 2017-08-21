@@ -1,10 +1,10 @@
-.deposits_root {
+.right_side_items_page {
     z-index: 3;
     position: absolute;
-    width: 38%;
     top: 0;
     right: 0;
     bottom: 0;
+    width: 38%;
     padding-left: 78px;
     padding-right: 78px;
     padding-top: 75px;
@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-.deposits_root .nav_container {
+.right_side_items_page .nav_container {
     display: inline-block;
     height: 36px;
     width: 100%;
@@ -20,10 +20,11 @@
     margin-bottom: 56px;
 }
 
-.deposits_root .nav_container .nav_button {
+.right_side_items_page .nav_container .nav_button {
+    box-sizing: border-box;
     width: 50%;
-    background-color: white;
-    color: #52aff1;
+    background-color: #52aff1;
+    color: white;
     border-radius: 4px 0 0 4px;
     border: solid 1px #52aff1;
     height: 36px;
@@ -31,11 +32,11 @@
     font-weight: 200;
 }
 
-.deposits_root .nav_container .nav_button:focus {
+.right_side_items_page .nav_container .nav_button:focus {
     outline: none;
 }
 
-.deposits_root .list_container {
+.right_side_items_page .list_container {
     position: absolute;
     top: 167px;
     left: 30px;

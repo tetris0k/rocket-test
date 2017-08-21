@@ -1,8 +1,4 @@
-.deposit_container .deposit_view {
-    padding: 0 18px 0 18px;
-}
-
-.deposit_container .history_string {
+.right_side_item_page .history_string {
     height: 18px;
     font-size: 14px;
     line-height: 1.28;
@@ -13,7 +9,7 @@
     padding-right: 48px;
 }
 
-.deposit_container .transactions_list {
+.right_side_item_page .transactions_list {
     display: block;
     text-align: start;
     position: absolute;
@@ -23,4 +19,8 @@
     bottom: 0;
     box-sizing: border-box;
     overflow-y: scroll;
+}
+
+.right_side_item_page .item_view {
+    padding: 0 18px 0 18px;
 }

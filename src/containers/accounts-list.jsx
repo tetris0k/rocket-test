@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Account from '../components/account';
 
-import './accounts-list.css';
+import './right-side-items-list.css';
 
 class AccountsList extends React.PureComponent {
   static propTypes = {
@@ -11,7 +11,7 @@ class AccountsList extends React.PureComponent {
   };
   render() {
     return (
-      <div className='accounts_list'>
+      <div className='right_side_items_list'>
         {this.props.accounts.map((account, index) =>
           <Account
             key={account.id}
