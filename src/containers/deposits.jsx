@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 import DepositsList from './deposits-list';
 import DepositView from './deposit';
+
 import './deposits.css';
 
 const DepositsView = () => (

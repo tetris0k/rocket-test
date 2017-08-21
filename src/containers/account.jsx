@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-//import { Link } from 'react-router-dom';
 import Account from '../components/account';
 import Transaction from '../components/transaction';
 import { sendTransaction } from '../actions/chat';

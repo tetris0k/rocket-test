@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Account from '../components/account';
+
 import './accounts-list.css';
 
 class AccountsList extends React.PureComponent {
